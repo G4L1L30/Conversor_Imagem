@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="520.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="conversorimagem.TelaInicialController">
+   <children>
+      <Button fx:id="btAbrir" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkAbrir" text="Abrir Imagem" AnchorPane.topAnchor="14.0" />
+      <SplitPane fx:id="splPImgView" dividerPositions="0.5" layoutX="6.0" layoutY="76.0" prefHeight="177.0" prefWidth="669.0">
+         <items>
+            <AnchorPane fx:id="acPImgOriginal" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imgVOriginal" fitHeight="207.0" fitWidth="375.0" onMouseMoved="#coordenadas" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="acPImgAlterado" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imgVAlterado" fitHeight="207.0" fitWidth="375.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Label fx:id="lbOriinal" layoutX="6.0" layoutY="51.0" text="Imagem Original" />
+      <Label fx:id="lbAlterado" layoutX="628.0" layoutY="51.0" text="Imagem Convertida" />
+      <SplitPane dividerPositions="0.5, 0.5" layoutX="317.0" layoutY="354.0" prefHeight="109.0" prefWidth="433.0">
+         <items>
+            <ImageView fx:id="imgV1" fitHeight="150.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgV2" fitHeight="150.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgV3" fitHeight="150.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" />
+         </items>
+      </SplitPane>
+      <Pane fx:id="pnContBotoes" layoutX="6.0" layoutY="370.0" prefHeight="142.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="btIntBMais" layoutX="55.0" layoutY="39.0" mnemonicParsing="false" onAction="#clkBtBrilhoMais" text="+" />
+            <Button fx:id="btIntBMenos" layoutX="13.0" layoutY="39.0" mnemonicParsing="false" onAction="#clkBtBrilhoMenos" prefHeight="25.0" prefWidth="29.0" text="-" />
+            <Label layoutX="14.0" layoutY="14.0" text="Intensidade do Brilho" />
+            <Label fx:id="lbntBrilho" layoutX="100.0" layoutY="44.0" text="0" />
+            <Label fx:id="lbHUE" layoutX="15.0" layoutY="75.0" text="HUE" />
+            <Button fx:id="btHUEMais" layoutX="55.0" layoutY="96.0" mnemonicParsing="false" onAction="#clkBtHUEMais" prefHeight="25.0" prefWidth="29.0" text="+" />
+            <Button fx:id="btHUEMenos" layoutX="13.0" layoutY="96.0" mnemonicParsing="false" onAction="#clkBtHUEMenos" prefHeight="25.0" prefWidth="29.0" text="-" />
+            <Label fx:id="lbIntHUE" layoutX="100.0" layoutY="108.0" text="0" />
+         </children>
+      </Pane>
+      <Pane fx:id="pnBtConv" layoutX="148.0" layoutY="1.0" prefHeight="52.0" prefWidth="392.0" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <Button fx:id="btHSI" layoutX="122.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkHSI" text="HSI" />
+            <Button fx:id="btRGB" layoutX="186.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkRGB" text="RGB" />
+            <Button fx:id="btLuminancia" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkBtLuminancia" text="Luminancia" />
+            <Button fx:id="btLimpar" layoutX="319.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkLimpar" text="Limpar" />
+            <Button fx:id="btCMY" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onAction="#clkBtCMY" text="CMY" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Pane>
+      <Pane fx:id="pnCoordenadas" layoutX="6.0" layoutY="294.0" prefHeight="75.0" prefWidth="210.0">
+         <children>
+            <Label fx:id="lbR" layoutX="14.0" layoutY="7.0" text="Label" />
+            <Label fx:id="lbG" layoutX="64.0" layoutY="7.0" text="Label" />
+            <Label fx:id="lbB" layoutX="113.0" layoutY="7.0" text="Label" />
+            <Label fx:id="lbC" layoutX="14.0" layoutY="30.0" text="Label" />
+            <Label fx:id="lbM" layoutX="64.0" layoutY="30.0" text="Label" />
+            <Label fx:id="lbY" layoutX="113.0" layoutY="30.0" text="Label" />
+            <Label fx:id="lbH" layoutX="14.0" layoutY="54.0" text="Label" />
+            <Label fx:id="lbS" layoutX="64.0" layoutY="54.0" text="Label" />
+            <Label fx:id="lbI" layoutX="113.0" layoutY="54.0" text="Label" />
+            <Label fx:id="lbXY" layoutX="162.0" layoutY="30.0" text="Label" />
+         </children>
+      </Pane>
+      <Pane fx:id="pnLbMini" layoutX="317.0" layoutY="319.0" prefHeight="25.0" prefWidth="448.0">
+         <children>
+            <Label fx:id="lbV1" layoutX="49.0" layoutY="4.0" text="Label" />
+            <Label fx:id="lbV2" layoutX="204.0" layoutY="3.0" text="Label" />
+            <Label fx:id="lbV3" layoutX="356.0" layoutY="4.0" text="Label" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
